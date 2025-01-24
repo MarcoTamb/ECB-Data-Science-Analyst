@@ -1,4 +1,4 @@
-\documentclass[10pt]{article}
+\documentclass[11pt]{article}
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
@@ -165,7 +165,7 @@
     \renewcommand{\LaTeX}{\textrm{\Oldlatex}}
     % Document parameters
     % Document title
-    \title{ECB Data Science Analyst – Publications and visualisation team - Statistical Applications}
+    \title{ECB Data Science Analyst – Publications and visualisation team - Statistical Applications - Task}
     
     
     
@@ -220,7 +220,6 @@
 \@namedef{PY@tok@gr}{\def\PY@tc##1{\textcolor[rgb]{0.89,0.00,0.00}{##1}}}
 \@namedef{PY@tok@ge}{\let\PY@it=\textit}
 \@namedef{PY@tok@gs}{\let\PY@bf=\textbf}
-\@namedef{PY@tok@ges}{\let\PY@bf=\textbf\let\PY@it=\textit}
 \@namedef{PY@tok@gp}{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
 \@namedef{PY@tok@go}{\def\PY@tc##1{\textcolor[rgb]{0.44,0.44,0.44}{##1}}}
 \@namedef{PY@tok@gt}{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
@@ -392,10 +391,8 @@
     
 
     
-
-
-\section{Importing and manipulating
-	data}\label{importing-and-manipulating-data}
+    \section{Importing and manipulating
+data}\label{importing-and-manipulating-data}
 
 Using Python, one first reads the \texttt{.xlsx} files. One can then
 manipulate the data to compute the Euro Area aggregate for the first
@@ -410,34 +407,37 @@ details)
 
 For the first and second chart, bar charts are chosen. To show
 contribution of countries and continents to GHG emissions, a Treemap
-chart is used. Thanks to Plotly, interactivity is available in Jupyter;
-furthermore, the charts can be seamlessly integrated in a Dash dashboard.
-\href{https://github.com/MarcoTamb/ECB-Data-Science-Analyst}{You can check out the code on my
-	Github (link)}
-
+chart is used, to better show the relative size of all contributing
+countries and regions. Thanks to Plotly, some interactivity is available
+when running the code in Jupyter; furthermore, the charts can be
+seamlessly integrated in a Dash or Shiny dashboard for pubblication.
+\href{https://github.com/MarcoTamb/ECB-Data-Science-Analyst}{You can check out the code on my Github (link)}
 
     \section{Chart 1}\label{chart-1}
 
 \begin{figure}
 \centering
-{\includegraphics[keepaspectratio]{Chart1.png}}
-\caption{Chart 1.png}
+\includegraphics[keepaspectratio]{Chart1.png}
+\caption{Chart 1}
 \end{figure}
 
     \subsection{KEY TRENDS}\label{key-trends}
 
 \begin{itemize}
 \item
-  Global greenhouse gas (GHG) emissions have shown a consistent upward
-  trend between 1971 and 2023.
+  Global greenhouse gas (GHG) emissions have steadily increased between
+  1971 and 2023, reflecting the growing impact of industrialization and
+  population growth worldwide. Temporary declines in GHG emissions
+  generally coincided with recessions.
 \item
-  The European Union (EU) and the Euro Area have made significant
-  progress in reducing GHG emissions, with a clear downward trend.
-  However, these efforts alone are insufficient to drive a meaningful
-  global impact.
+  The European Union (EU) and the Euro Area have demonstrated a clear
+  downward trend in GHG emissions, highlighting substantial progress in
+  mitigation efforts. However, their reductions alone are insufficient
+  to offset the global increase in emissions.
 \item
-  Within the European Union, the Euro Area is responsible for the
-  majority of the observed changes in GHG emissions.
+  Within the European Union, the Euro Area accounts for the largest
+  share of GHG emissions reductions, underscoring its pivotal role in
+  driving regional climate progress.
 \end{itemize}
 
     \section{Chart 2}\label{chart-2}
@@ -445,50 +445,52 @@ furthermore, the charts can be seamlessly integrated in a Dash dashboard.
 \begin{figure}
 \centering
 {\includegraphics[keepaspectratio]{Chart2.png}}
-\caption{Chart 2.png}
+\caption{Chart 2}
 \end{figure}
 
     \subsection{KEY TRENDS}\label{key-trends}
 
 \begin{itemize}
 \item
-  Greenhouse gas (GHG) emissions in high-income countries have remained
-  relatively stable over the period analysed, with a notable downward
-  trend beginning in 2007.
+  Greenhouse gas (GHG) emissions per capita in high-income countries
+  have been steadily declining since the 1970s, potentially due to
+  advancements in clean technologies and stricter environmental
+  policies. This reduction has however slowed down significantly
+  beetween 1985 and 2012
 \item
-  GHG emissions in upper-middle-income countries have surged
-  significantly since 1971, with rapid acceleration around 2000, making
-  them the largest contributors to global emissions by 2010.
+  GHG emissions per capita in lower- and middle-income countries have
+  remained relatively stable throughout the period, with only minor
+  fluctuations or gradual increases.
 \item
-  While GHG emissions in lower-middle-income and low-income countries
-  have risen during the same period, their comparatively lower levels
-  remain less concerning for now.
+  Higher income levels are strongly associated with higher GHG emissions
+  per capita, underscoring the relationship between economic prosperity
+  and environmental impact.
 \end{itemize}
 
     \section{Chart 3}\label{chart-3}
 
-    \subsection{KEY TRENDS}\label{key-trends}
+\subsection{KEY TRENDS}\label{key-trends}
 
 \begin{itemize}
 \item
-  China significantly contributes to global greenhouse gas (GHG)
-  emissions, dominating the ``East Asia \& Pacific'' region and the
-  global total.
+  China is the largest single contributor to global greenhouse gas (GHG)
+  emissions, driving the ``East Asia \& Pacific'' region's dominance and
+  accounting for a substantial share of the global total.
 \item
   Different regions contribute unevenly to global GHG emissions. ``East
   Asia \& Pacific,'' ``North America,'' and ``Europe \& Central Asia''
   are prominent contributors compared to regions like ``Sub-Saharan
   Africa'' and ``Latin America \& Caribbean.''
 \item
-  Countries like Brazil, Indonesia, and Saudi Arabia are noteworthy
-  contributors in their respective regions, reflecting the environmental
-  impact of emerging economies.
+  Countries like India, Brazil, Indonesia, and Iran are noteworthy
+  contributors in their respective regions, reflecting the increasing
+  environmental impact of emerging economies.
 \end{itemize}
 
-\begin{figure}
-	\centering
-	{\includegraphics[keepaspectratio]{Chart3.png}}
-	\caption{Chart 3.png}
+    \begin{figure}
+\centering
+{\includegraphics[keepaspectratio]{Chart3.png}}
+\caption{Chart 3}
 \end{figure}
 
 
