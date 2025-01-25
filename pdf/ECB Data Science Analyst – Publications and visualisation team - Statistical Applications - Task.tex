@@ -1,8 +1,8 @@
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
-    \usepackage{svg}
+    
 
     % Basic figure setup, for now with no caption control since it's done
     % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
@@ -386,12 +386,12 @@
 
 \begin{document}
     
-    \maketitle
+%    \maketitle
     
     
 
     
-    \subsection{Importing, manipulating data, making the
+    \section{Importing, manipulating data, making the
 charts}\label{importing-manipulating-data-making-the-charts}
 
 Using Python, I first read the two sheets we are interested in inside
@@ -422,11 +422,11 @@ plot} is one of the better choices, or alternatively a stacked bar
 chart, although it would be necessary to reduce the number of countries
 or regions one looks at (like in
 \href{https://en.wikipedia.org/wiki/File:GHG_emissions_by_world_region,_1850-2021.png}{this
-chart on wikipedia} not made by me). Thanks to Plotly and ipywidgets,
-some interactivity is available when running the code in Jupyter, and
-this can also be used to rescue the time-coordinate in the third chart
-by adding a slider; furthermore, the charts can be seamlessly integrated
-in a Dash or Shiny dashboard for pubblication.
+chart on wikipedia}). Thanks to Plotly and ipywidgets, some
+interactivity is available when running the code in Jupyter, and this
+can also be used to rescue the time-coordinate in the third chart by
+adding a slider; furthermore, the charts can be seamlessly integrated in
+a Dash or Shiny dashboard for pubblication.
 \href{https://github.com/MarcoTamb/ECB-Data-Science-Analyst}{You can
 check out the code on my Github (link)}. There, Chart 3 is also
 available as a
@@ -439,7 +439,7 @@ but maybe makes it clearer how the different sizes are made).
 
 \begin{figure}
 \centering
-{\includesvg{Chart1.svg}}
+\includegraphics[keepaspectratio, scale=1.15]{Chart1.pdf}
 \caption{Chart 1}
 \end{figure}
 
@@ -466,7 +466,7 @@ but maybe makes it clearer how the different sizes are made).
 
 \begin{figure}
 \centering
-{\includesvg{Chart2.svg}}
+\includegraphics[keepaspectratio, scale=1.15]{Chart2.pdf}
 \caption{Chart 2}
 \end{figure}
 
@@ -474,16 +474,12 @@ but maybe makes it clearer how the different sizes are made).
 
 \begin{itemize}
 \item
-  Greenhouse gas (GHG) emissions per capita in high-income countries
-  have been slowly declining since the 1980s, potentially due to
-  advancements in clean technologies and stricter environmental
-  policies.
+  High-income countries have the highest GHG emissions per capita, with a slightly declining trends in recent years.
 \item
   GHG emissions per capita in upper-middle income have sharply increased
-  since 2000, likely driven by China's fast industrialization.
+  in the 21th century, narrowing the gap with high income countries.
 \item
-  GHG emissions in low income countries have been slowly declining in
-  recent years
+  Low- and lower-middle-income countries have much lower emissions per capita, with modest or negligible changes over time.
 \end{itemize}
 
     \section{Chart 3}\label{chart-3}
@@ -508,7 +504,7 @@ but maybe makes it clearer how the different sizes are made).
 
     \begin{figure}
 \centering
-{\includesvg{Chart3.svg}}
+\includegraphics[keepaspectratio, scale=1.15]{Chart3.pdf}
 \caption{Chart 3}
 \end{figure}
 
