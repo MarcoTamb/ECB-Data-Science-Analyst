@@ -396,17 +396,17 @@ charts}\label{importing-manipulating-data-making-the-charts}
 
 Using Python, I first read the two sheets we are interested in inside
 the \texttt{.xlsx} file. I then manipulated the data to compute the Euro
-Area aggregate for the first chart. Then I took a weighted average by
+Area aggregate for the first chart and used \texttt{.diff()} to get the rate of change. Then I took a weighted average by
 population of the per-capita values in the excel, to get a reasonable
 value per-capita for each income group for the second chart. Finally I
-added a column for each country showing which region it is in. Then the
-charts are built using Plotly. ECB colour scheme is used for your
+added a column for each country, showing which region it is in (using again the classification from the World Bank). Then the
+charts are built using Plotly. ECB-like colour scheme is used for your
 convenience, for consistency among the many submissions you will surely
 receive, hoping people will do the same. Income groups had to be fixed
 by hand (still using Python) to account for some slight labelling
 differences between the \texttt{CLASS.xlsx} file and the
 \texttt{EDGAR\_2024\_GHG\_booklet\_2024.xlsx} file. (see the link to the
-code below for more details and to argue about the arbitrary choices I
+code below for more details and to argue about the many arbitrary choices I
 made)
 
 For the first and second chart, bar charts are chosen, to keep the time
@@ -415,8 +415,8 @@ are interested in. The reason for this choice, among many possible
 choices, is that generally people perceive relative size of areas
 better. To show contribution of countries and continents to GHG
 emissions, a Treemap chart is used, to better show the relative size of
-all contributing countries and regions. This choice for the third chart
-however hides the time-component of the data; if this needs to be
+all contributing countries and regions. This choice for the third chart,
+however, hides the time-component of the data; if this needs to be
 included, an \href{https://plotly.com/python/filled-area-plots/}{area
 plot} is one of the better choices, or alternatively a stacked bar
 chart, although it would be necessary to reduce the number of countries
@@ -425,15 +425,13 @@ or regions one looks at (like in
 chart on wikipedia}). Thanks to Plotly and ipywidgets, some
 interactivity is available when running the code in Jupyter, and this
 can also be used to rescue the time-coordinate in the third chart by
-adding a slider; furthermore, the charts can be seamlessly integrated in
-a Dash or Shiny dashboard for pubblication.
+adding a slider or animating the charts; furthermore, the charts can be seamlessly integrated in a Dash or Shiny dashboard for pubblication.
 \href{https://github.com/MarcoTamb/ECB-Data-Science-Analyst}{You can
-check out the code on my Github (link)}. There, Chart 3 is also
+check out the code I used on my Github (link)}. There, Chart 3 is also
 available as a
 \href{https://plotly.com/python/sunburst-charts/}{Sunburst} (more
-compact, but people easily misjudge angles) or
-\href{https://plotly.com/python/icicle-charts/}{Icicle} chart (uglier,
-but maybe makes it clearer how the different sizes are made).
+compact, but people easily misjudge angles; also, being round it is less efficient in a pdf page) or
+\href{https://plotly.com/python/icicle-charts/}{Icicle} chart (uglier, in my personal opinion), as well as an \textbf{animated} version of all three versions of Chart 3.
 
     \section{Chart 1}\label{chart-1}
 
@@ -474,7 +472,7 @@ but maybe makes it clearer how the different sizes are made).
 
 \begin{itemize}
 \item
-  High-income countries have the highest GHG emissions per capita, with a slightly declining trends in recent years.
+  High-income countries have the highest GHG emissions per capita, with a slightly declining trend in recent years.
 \item
   GHG emissions per capita in upper-middle income have sharply increased
   in the 21th century, narrowing the gap with high income countries.
